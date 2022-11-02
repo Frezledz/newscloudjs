@@ -3,6 +3,7 @@ const _handshake = require("./libraries/cloud").handshake;
 const _sendtocloud = require("./libraries/cloud").sendtocloud;
 const _login = require("./libraries/login").login;
 const _setdatas = require("./libraries/setdata").setdatas;
+const _parsedata = require("./libraries/cloud").parsedata;
 module.exports = (
     {
         connect:_connect,
@@ -10,5 +11,6 @@ module.exports = (
         sendtocloud:_sendtocloud,
         login:_login,
         setdatas:_setdatas,
+        parsedata:_parsedata
     }
     )

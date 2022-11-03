@@ -2,7 +2,7 @@ const https = require("https");
 const adatas = require("./setdata").adatas;
 let _tokens = {sessionsid:"",token:"",isloggedin:0};
 const _login = ()=>{
- return new Promise((resolve) =>{
+ return new Promise((resolve,reject) =>{
    const reqoptions = {
        hostname: 'scratch.mit.edu',
        path: '/login/',
@@ -22,16 +22,21 @@ const _login = ()=>{
           datas.push(a);
          });
          res.on("end",()=>{
-          for(c of res.rawHeaders){             
-            if(c.includes("scratchsessionsid")){
-              _tokens.sessionsid = c.match(/\"(.*)\"/g)[0];
-            break;
+          if(res.statusCode === 200){
+            for(c of res.rawHeaders){             
+              if(c.includes("scratchsessionsid")){
+                _tokens.sessionsid = c.match(/\"(.*)\"/g)[0];
+              break;
+            }
+            }
+            const a = Buffer.concat(datas);
+            const reg = JSON.parse(Buffer.from(a,"utf-8").toString())
+            _tokens.token = reg[0].token;
+            resolve(_tokens);
+            
+          } else{
+            reject("incorrect password or user is not exist");
           }
-          }
-          const a = Buffer.concat(datas);
-          const reg = JSON.parse(Buffer.from(a,"utf-8").toString())
-          _tokens.token = reg[0].token;
-          resolve(_tokens);
          })
      })
        

@@ -50,7 +50,7 @@ const _parsedata = (data,clouds)=>{
         clouds[c.name] = {method:c.method,project_id:c.project_id,value:c.value};
         changedlists.push(c.name);
     }
-    return {changedlists:changedlists,cloudatas:clouds};
+    return {changedlists:changedlists,clouddatas:clouds};
 }
 
 module.exports = {

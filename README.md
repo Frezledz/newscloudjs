@@ -1,7 +1,7 @@
 # NEW ScloudJS v1.0
 
 I remade old [Scloudjs](https://github.com/xxXFreezerXxx/ScloudJS) for better usability like make it able to use it as a package, better interface and so on.  
-[説明(日本語版)](https://github.com/xxXFreezerXxx/newscloudjs/wiki/Description%5BJA%5D)
+[説明(日本語版)](https://github.com/xxXFreezerXxx/newscloudjs/wiki/Description%5B%E6%97%A5%E6%9C%AC%E8%AA%9E%E7%89%88%5D)
 ## requirements
 Node.js (Should be new and stable version)
 ## Usage

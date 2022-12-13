@@ -52,10 +52,18 @@ const _parsedata = (data,clouds)=>{
     }
     return {changedlists:changedlists,clouddatas:clouds};
 }
-
+const _setpredata = (clouds)=>{
+    let arr =new Object;
+    for(c of clouds){
+        arr[c]={method:null,project_id:null,value:null};
+    }
+    return arr;
+}
+console.log(setpredata(["CLIENT","HOST_1","HOST_2","HOST_3","HOST_4","HOST_5","HOST_6","HOST_7","HOST_8"]));
 module.exports = {
     connect:_connect,
     handshake:_handshake,
     sendtocloud:_sendtocloud,
-    parsedata:_parsedata
+    parsedata:_parsedata,
+    setpredata:_setpredata
 }

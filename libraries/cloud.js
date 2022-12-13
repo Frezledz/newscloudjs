@@ -59,7 +59,6 @@ const _setpredata = (clouds)=>{
     }
     return arr;
 }
-console.log(setpredata(["CLIENT","HOST_1","HOST_2","HOST_3","HOST_4","HOST_5","HOST_6","HOST_7","HOST_8"]));
 module.exports = {
     connect:_connect,
     handshake:_handshake,

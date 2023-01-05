@@ -16,6 +16,7 @@ npm i scloudjs
 ```
 const scloudjs = require("scloudjs"); //Able to use ScloudJS as a module
 let clouddatas = new Object();//Cloud variable's data will be written here
+clouddatas = scloudjs.setpredata(["CLIENT","HOST_1"]);//Name of cloud datas(optional)
 
 const process = (data)=>{//Codes you want to run when you received a message from server
    const temp = scloudjs.parsedata(data,clouddatas);//sort datas

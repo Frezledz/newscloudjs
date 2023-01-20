@@ -7,7 +7,6 @@ const login = require("./libraries/login").login;
 const setdatas = require("./libraries/setdata").setdatas;
 module.exports = (
     {
-        a,
         connect,
         handshake,
         sendtocloud,

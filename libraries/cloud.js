@@ -34,7 +34,6 @@ const _handshake = ()=>{
 const _sendtocloud =(name,value)=>{
     Socket.send(`${JSON.stringify({"method":"set","user":adatas.username,"project_id":adatas.projectid,"name":"☁ "+name,"value":value,
     headers : {cookie: `scratchsessionsid=+${tokens.sessionsid};`,origin: 'https://scratch.mit.edu'}})}\n`);
-    return value;
 }
 
 const _parsedata = (data,clouds)=>{
